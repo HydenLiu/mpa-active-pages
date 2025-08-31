@@ -39,7 +39,7 @@ const Index = () => {
             myLucky.current?.stop(index)
           }, 2500)
         }}
-        onEnd={(prize) => {
+        onEnd={(prize: any) => {
           // 抽奖结束会触发end回调
           alert('恭喜你抽到 ' + prize.fonts[0].text + ' 号奖品')
         }}

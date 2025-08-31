@@ -1,6 +1,14 @@
 import { defineConfig } from '@rsbuild/core'
 import { pluginReact } from '@rsbuild/plugin-react'
 import { pluginTailwindCSS } from 'rsbuild-plugin-tailwindcss'
+import fs from 'fs-extra'
+
+const page = process.env.PAGE
+if (!page) {
+  throw new Error('⚠️ PAGE environment variable is not set')
+}
+
+console.log('Current page: ', page)
 
 export default defineConfig({
   plugins: [pluginReact(), pluginTailwindCSS()],
@@ -9,15 +17,16 @@ export default defineConfig({
   },
   source: {
     entry: {
-      'hello-world': {
-        import: './src/pages/hello-world/index.tsx',
-      },
-      'hello-world2': './src/pages/hello-world2/index.tsx',
+      [page]: `./src/pages/${page}/index.tsx`,
     },
   },
   html: {
     template({ entryName }) {
-      console.log(entryName, 'entryName')
+      // Check if the page has its own HTML template
+      const templatePath = `./src/pages/${entryName}/index.html`
+      if (fs.existsSync(templatePath)) {
+        return templatePath
+      }
 
       return './src/template/index.html'
     },
