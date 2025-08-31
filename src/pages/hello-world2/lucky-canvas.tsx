@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { LuckyWheel } from '@lucky-canvas/react'
 
 const Index = () => {
@@ -21,7 +21,7 @@ const Index = () => {
       fonts: [{ text: '开始', top: '-10px' }],
     },
   ])
-  const myLucky = useRef()
+  const myLucky: any = useRef({})
   return (
     <div>
       <LuckyWheel
@@ -33,10 +33,10 @@ const Index = () => {
         buttons={buttons}
         onStart={() => {
           // 点击抽奖按钮会触发star回调
-          myLucky.current.play()
+          myLucky.current?.play()
           setTimeout(() => {
             const index = (Math.random() * 6) >> 0
-            myLucky.current.stop(index)
+            myLucky.current?.stop(index)
           }, 2500)
         }}
         onEnd={(prize) => {
