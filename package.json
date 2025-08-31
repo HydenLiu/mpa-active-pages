@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "@lucky-canvas/react": "^0.1.13",
+    "i18next": "^25.4.2",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-i18next": "^15.7.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
