@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "rsbuild preview",
     "dev:rsdoctor": "cross-env RSDOCTOR=true rsbuild dev",
-    "build:rsdoctor": "cross-env RSDOCTOR=true rsbuild build"
+    "build:rsdoctor": "cross-env RSDOCTOR=true rsbuild build",
+    "build:analyze": "cross-env BUNDLE_ANALYZE=true rsbuild build"
   },
   "dependencies": {
     "@lucky-canvas/react": "^0.1.13",

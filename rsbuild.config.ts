@@ -1,4 +1,4 @@
-import { defineConfig } from '@rsbuild/core'
+import { defineConfig, logger } from '@rsbuild/core'
 import { pluginReact } from '@rsbuild/plugin-react'
 import { pluginTailwindCSS } from 'rsbuild-plugin-tailwindcss'
 import fs from 'fs-extra'
@@ -8,7 +8,7 @@ if (!page) {
   throw new Error('⚠️ PAGE environment variable is not set')
 }
 
-console.log('Current page: ', page)
+logger.greet(`Current page: ${page}\n`)
 
 export default defineConfig({
   plugins: [pluginReact(), pluginTailwindCSS()],
