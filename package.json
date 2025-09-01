@@ -17,6 +17,7 @@
   "dependencies": {
     "@lucky-canvas/react": "^0.1.13",
     "@radix-ui/react-dialog": "^1.1.15",
+    "@tanstack/react-query": "^5.85.6",
     "i18next": "^25.4.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -47,10 +48,7 @@
     "typescript-eslint": "^8.38.0"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged",
-    "preserveUnused": [
-      "commit-msg"
-    ]
+    "pre-commit": "pnpm exec lint-staged"
   },
   "lint-staged": {
     "*": [
