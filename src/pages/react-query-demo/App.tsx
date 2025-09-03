@@ -1,12 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
+import request from '@/utils/request'
 
 const App = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ['repoData'],
-    queryFn: () =>
-      fetch('https://api.github.com/repos/TanStack/query').then((res) =>
-        res.json(),
-      ),
+    queryFn: () => request.get('/repos/TanStack/query').then((res) => res.data),
   })
 
   if (isPending) return 'Loading...'
