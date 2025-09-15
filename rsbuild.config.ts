@@ -32,7 +32,10 @@ export default defineConfig({
     },
   },
   output: {
-    assetPrefix: './',
+    assetPrefix: import.meta.env.DEV ? './' : '',
     // legalComments: 'none',
+  },
+  performance: {
+    removeConsole: import.meta.env.PROD,
   },
 })
