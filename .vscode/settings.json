@@ -9,6 +9,11 @@
     "typescriptreact"
   ],
   "eslint.workingDirectories": ["."],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -32,11 +37,6 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    }
   },
   "files.associations": {
     "*.css": "tailwindcss"

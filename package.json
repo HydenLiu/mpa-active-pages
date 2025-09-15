@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "rsbuild build",
     "dev": "rsbuild dev",
+    "build:test": "rsbuild build --env-mode test",
+    "build:prod": "rsbuild build --env-mode production",
     "format": "prettier --write .",
     "lint": "eslint .",
     "preview": "rsbuild preview",
