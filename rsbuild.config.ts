@@ -32,7 +32,6 @@ export default defineConfig({
     },
   },
   output: {
-    assetPrefix: import.meta.env.DEV ? './' : '',
     // legalComments: 'none',
   },
   performance: {
