@@ -36,5 +36,12 @@ export default defineConfig({
   },
   performance: {
     removeConsole: import.meta.env.PROD,
+    chunkSplit: {
+      forceSplitting: {
+        i18next: /node_modules[\\/]i18next/,
+        '@tanstack': /node_modules[\\/]@tanstack/,
+        '@radix-ui': /node_modules[\\/]@radix-ui/,
+      },
+    },
   },
 })
